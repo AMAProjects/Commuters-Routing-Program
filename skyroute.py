@@ -15,3 +15,21 @@ def greet():
 def skyroute():
   greet()
 
+
+def set_start_and_end(start_point, end_point): #This will handle setting the selected origin and destination points.
+  if start_point != None:
+    change_point = input("What would you like to change? You can enter 'o' for 'origin', 'd' for 'destination', or 'b' for 'both': ")
+    
+  else:
+    start_point = get_start()
+    end_point = get_end()
+  
+  return start_point
+  return End_point
+
+
+def get_start(): # will be used to request an origin from the user.
+  pass
+
+def get_end(): #to request and end from the user
+  pass
