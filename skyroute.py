@@ -77,7 +77,6 @@ def new_route(start_point = None, end_point = None):
     shortest_route_string = '\n'.join(shortest_route)
     print("The shortest metro route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
   else:
-    else:
     "Unfortunately, there is currently no path between {0} and {1} due to maintenance.".format(start_point, end_point)
   
   again = input('Would you like to see another route? Enter y/n: ')
@@ -88,7 +87,7 @@ def new_route(start_point = None, end_point = None):
 def show_landmarks():
   see_landmarks = 'Would you like to see the list of landmarks again? Enter y/n: '
   if see_landmarks == 'y':
-    print(landamark_string) 
+    print(landmark_string) 
 
 def get_route(start_point, end_point):
   start_stations = vc_landmarks[start_point]
@@ -103,7 +102,7 @@ def get_route(start_point, end_point):
 
   shortest_route = min(routes, key=len)
 
-  return shortest_routes
+  return shortest_route
 
 def get_active_stations():
   updated_metro = vc_metro
