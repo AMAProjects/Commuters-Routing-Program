@@ -14,6 +14,7 @@ def greet():
 
 def skyroute():
   greet()
+  new_route()
 
 
 def set_start_and_end(start_point, end_point): #This will handle setting the selected origin and destination points.
@@ -69,6 +70,9 @@ def get_end(): #to request and end from the user
 
 def new_route(start_point = None, end_point = None):
   start_point, end_point  = set_start_and_end(start_point, end_point )
+  shortest_route = get_route(start_point, end_point)
+  shortest_route_string = '\n'.join(shortest_route)
+  print("The shortest metro route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string)
 
 def get_route(start_point, end_point):
   start_stations = vc_landmarks[start_point]
