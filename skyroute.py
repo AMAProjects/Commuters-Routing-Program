@@ -5,6 +5,7 @@ from landmark_choices import landmark_choices
 
 #Start of building the program
 landmark_string = ''
+stations_under_construction = []
 for letter, landmark in landmark_choices.items(): #.items() is used on a dictionary to access both the keys and values as pairs.
   landmark_string += '{0} - {1}\n'.format(letter, landmark)
 
@@ -71,8 +72,13 @@ def get_end(): #to request and end from the user
 def new_route(start_point = None, end_point = None):
   start_point, end_point  = set_start_and_end(start_point, end_point )
   shortest_route = get_route(start_point, end_point)
-  shortest_route_string = '\n'.join(shortest_route)
-  print("The shortest metro route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
+
+  if shortest_route is not None:
+    shortest_route_string = '\n'.join(shortest_route)
+    print("The shortest metro route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
+  else:
+    else:
+    "Unfortunately, there is currently no path between {0} and {1} due to maintenance.".format(start_point, end_point)
   
   again = input('Would you like to see another route? Enter y/n: ')
   if again == 'y':
