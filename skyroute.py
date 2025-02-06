@@ -105,6 +105,19 @@ def get_route(start_point, end_point):
 
   return shortest_routes
 
+def get_active_stations():
+  updated_metro = vc_metro
+  for station_under_construction in stations_under_construction:
+    for current_station, neighboring_stations in vc_metro.items():
+      if current_station != station_under_construction:
+        updated_metro[current_station] -= set(stations_under_construction)
+      
+      else:
+        updated_metro[current_station] = set([])
+  
+  return updated_metro
+  
+
 def goodbye():
   print('Thanks foe using SkyRoute!')
 
