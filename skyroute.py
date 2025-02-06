@@ -95,6 +95,11 @@ def get_route(start_point, end_point):
   routes = []
   for start_station in start_stations:
     for end_station in end_stations:
+      metro_system = get_active_stations() if stations_under_construction else vc_metro
+      if len(stations_under_construction) > 0:
+        possible_route = dfs(metro_system, start_station, end_station)
+        if not possible_route:
+          continue
       route = bfs(vc_metro, start_station, end_station)
 
       if route is not None:
