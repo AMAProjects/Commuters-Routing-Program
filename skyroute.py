@@ -67,4 +67,5 @@ def get_end(): #to request and end from the user
   return end_point
 
 
-print(set_start_and_end(None, None))
+def new_route(start_point = None, end_point = None):
+  start_point, end_point  = set_start_and_end(start_point, end_point )
