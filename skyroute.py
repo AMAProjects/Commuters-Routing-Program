@@ -100,14 +100,15 @@ def get_route(start_point, end_point):
         possible_route = dfs(metro_system, start_station, end_station)
         if not possible_route:
           continue
-      route = bfs(vc_metro, start_station, end_station)
+      route = bfs(metro_system, start_station, end_station)
 
       if route is not None:
         routes.append(route)
 
-  shortest_route = min(routes, key=len)
+  if routes:
+    shortest_route = min(routes, key=len)
 
-  return shortest_route
+    return shortest_route
 
 def get_active_stations():
   updated_metro = vc_metro
