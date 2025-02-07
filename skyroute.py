@@ -40,8 +40,7 @@ def set_start_and_end(start_point, end_point): #This will handle setting the sel
     start_point = get_start()
     end_point = get_end()
   
-  return start_point
-  return End_point
+  return start_point, end_point 
 
 
 def get_start(): # will be used to request an origin from the user.
@@ -124,7 +123,7 @@ def get_active_stations():
   
 
 def goodbye():
-  print('Thanks foe using SkyRoute!')
+  print('Thanks for using SkyRoute!')
 
 skyroute()
 
