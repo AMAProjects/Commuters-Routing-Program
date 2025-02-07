@@ -72,16 +72,24 @@ def new_route(start_point = None, end_point = None):
   start_point, end_point  = set_start_and_end(start_point, end_point )
   shortest_route = get_route(start_point, end_point)
 
-  if shortest_route is not None:
-    shortest_route_string = '\n'.join(shortest_route)
-    print("The shortest metro route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
+  if start_point == end_point:
+    all_again = input('Looks like you are already where you want to be! Try again? y/n: ')
+    
+    if all_again == 'y':
+      skyroute()
+    
   else:
-    "Unfortunately, there is currently no path between {0} and {1} due to maintenance.".format(start_point, end_point)
+
+    if shortest_route is not None:
+      shortest_route_string = '\n'.join(shortest_route)
+      print("The shortest metro route from {0} to {1} is:\n{2}".format(start_point, end_point, shortest_route_string))
+    else:
+      "Unfortunately, there is currently no path between {0} and {1} due to maintenance.".format(start_point, end_point)
   
-  again = input('Would you like to see another route? Enter y/n: ')
-  if again == 'y':
-    show_landmarks()
-    new_route(start_point, end_point)
+    again = input('Would you like to see another route? Enter y/n: ')
+    if again == 'y':
+      show_landmarks()
+      new_route(start_point, end_point)
 
 def show_landmarks():
   see_landmarks = 'Would you like to see the list of landmarks again? Enter y/n: '
